@@ -30,6 +30,7 @@ Lattice-Lock maintains **dual versioning**:
 ### Framework Version
 
 The framework version tracks the overall Lattice-Lock system including:
+
 - Compiler (`compile_lattice.py`)
 - Sheriff enforcement (`sheriff.py`)
 - Orchestrator logic
@@ -121,6 +122,7 @@ generated_module: types_v2  # Uses major version only
 ```
 
 This enables:
+
 - Multiple schema versions to coexist in the same codebase
 - Gradual migrations between versions
 - Rollback capabilities
@@ -231,17 +233,20 @@ MAJOR version upgrades may require:
 
 ### Version Roadmap
 
-#### v2.2.0 (Planned)
+#### V2.2.0 (Planned)
+
 - JSONSchema integration for meta-schema validation
 - Enhanced ORM support (additional frameworks)
 - Improved error messages and developer experience
 
-#### v2.3.0 (Planned)
+#### V2.3.0 (Planned)
+
 - Multi-language support (TypeScript, Go)
 - Enhanced dependency management
 - Performance optimizations
 
-#### v3.0.0 (Future)
+#### V3.0.0 (Future)
+
 - Next-generation governance architecture
 - Cloud-native orchestration
 - Advanced semantic verification

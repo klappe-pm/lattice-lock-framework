@@ -56,7 +56,7 @@ Lattice-Lock transforms code generation from **probabilistic synthesis** into **
 
 ## Key Components
 
-### 1. `lattice.yaml` — The Single Source of Truth
+### 1. `lattice.yaml`—The Single Source of Truth
 
 A versioned declarative schema defining entities, invariants, forbidden imports, and service interfaces.
 
@@ -68,6 +68,7 @@ A versioned declarative schema defining entities, invariants, forbidden imports,
 - Interface definitions with scaffold patterns
 
 **Example Structure:**
+
 ```yaml
 version: v2.1
 generated_module: types_v2
@@ -108,10 +109,11 @@ interfaces:
 ### 2. Polyglot Compiler (`compile_lattice.py`)
 
 Transforms YAML into multiple synchronized enforcement artifacts:
-- **Pydantic models** — API contracts and validation
-- **SQLModel ORM** — Database schema definitions
-- **Alembic migrations** — Database version control
-- **Pytest contracts** — Auto-generated test suites
+
+- **Pydantic models**—API contracts and validation
+- **SQLModel ORM**—Database schema definitions
+- **Alembic migrations**—Database version control
+- **Pytest contracts**—Auto-generated test suites
 
 ### 3. Governance Stack (Four Enforcement Layers)
 
@@ -125,17 +127,20 @@ Transforms YAML into multiple synchronized enforcement artifacts:
 ### 4. Agent Roles
 
 #### Architect Agent
+
 - Outputs ONLY valid `lattice.yaml` files
 - Never writes implementation code
 - Defines entities, invariants, interfaces, and scaffold patterns
 
 #### Mason Agent
+
 - Implements business logic within pre-defined scaffolds
 - Imports ONLY from generated shared modules
 - Must pass Sheriff syntax checks AND Gauntlet unit tests
 - Restarted with exact error feedback on failure
 
 #### Orchestrator
+
 - Uses topological sorting for dependency-aware parallel execution
 - Orders file generation based on `depends_on` declarations
 
@@ -153,9 +158,9 @@ Deployed across three regulated domains in late 2025:
 
 ### Key Metrics
 
-- **100% structural compliance** — All T1 errors caught at compile time
-- **>99% semantic compliance** — 300× improvement over unconstrained benchmarks
-- **Schema ROI** — 74× to 96× code amplification from schema definition
+- **100% structural compliance**—All T1 errors caught at compile time
+- **>99% semantic compliance**—300× improvement over unconstrained benchmarks
+- **Schema ROI**—74× to 96× code amplification from schema definition
 
 ---
 
@@ -197,17 +202,12 @@ Deployed across three regulated domains in late 2025:
 
 The project folder includes related papers examining:
 
-1. **LLM Hallucinations in Practical Code Generation** — Taxonomy of hallucination types (Task Requirement, Factual Knowledge, Project Context conflicts)
-
-2. **SemGuard** — Real-time semantic evaluation during the decoding process
-
-3. **CVCP (Cross-Verification Collaboration Protocol)** — Multi-agent protocols for competitive programming with symmetry-aware coordination
-
-4. **MetaGPT / OpenHands** — Comparative multi-agent frameworks using SOPs and role specialization
-
-5. **Show and Tell** — Prompt strategies for style control in multi-turn code generation
-
-6. **Code in Harmony** — Survey evaluating multi-agent framework architectures and benchmarks
+1. **LLM Hallucinations in Practical Code Generation**—Taxonomy of hallucination types (Task Requirement, Factual Knowledge, Project Context conflicts)
+2. **SemGuard**—Real-time semantic evaluation during the decoding process
+3. **CVCP (Cross-Verification Collaboration Protocol)**—Multi-agent protocols for competitive programming with symmetry-aware coordination
+4. **MetaGPT / OpenHands**—Comparative multi-agent frameworks using SOPs and role specialization
+5. **Show and Tell**—Prompt strategies for style control in multi-turn code generation
+6. **Code in Harmony**—Survey evaluating multi-agent framework architectures and benchmarks
 
 ### Lattice-Lock's Unique Contribution
 
