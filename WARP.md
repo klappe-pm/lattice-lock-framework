@@ -6,12 +6,8 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 **Lattice-Lock** is a governance-first, deterministic code generation framework designed to eliminate interface drift and style divergence in multi-agent LLM systems. The project transforms code generation from probabilistic synthesis into constrained assembly by pre-compiling schema definitions into enforcement artifacts.
 
-**Current Version**: 2.1.0 (Production-ready, targeting ACM TOSEM publication)
-
 ## Core Architecture
-
 The framework operates in two phases:
-
 1. **Pre-Computation Phase**: `lattice.yaml` → Polyglot Compiler → Governance Cage (types, ORM models, migrations, test contracts)
 2. **Implementation Phase**: Mason Agents → Implementation Code → Sheriff (AST) + The Gauntlet (pytest) → PASS/REJECT
 
@@ -102,7 +98,6 @@ source scripts/setup_api_keys.sh
 
 **MANDATORY**: All files follow snake_case naming conventions:
 
-```
 Lattice Lock Framework/
 ├── agent_definitions/        # Agent YAML/Markdown definitions by category
 │   ├── business_review_agent/
@@ -122,7 +117,6 @@ Lattice Lock Framework/
 │   ├── zen_mcp_bridge.py
 │   └── ...
 └── src/                     # Source code modules
-```
 
 **Key Rules**:
 - Use snake_case for ALL directories and files
@@ -144,13 +138,11 @@ All agents follow the Universal Memory Directive (`agent_memory/universal_memory
 ### Workflow Templates
 
 Three execution patterns in `agent_workflows/`:
-
 1. **Parallel Execution** (`parallel_execution_workflow.md`): 64GB+ RAM, 30-70% time savings, independent work streams
 2. **Sequential Execution** (`sequential_execution_workflow.md`): 16GB+ RAM, simplified complexity, dependent tasks
 3. **Hybrid Workflow** (`hybrid_workflow.md`): 32GB+ RAM, 30-50% time savings, mixed dependencies
 
 ### Agent Templates
-
 Base templates in `agent_definitions/templates_agent/`:
 
 - **Base Agent Template**: Foundation for all agents
@@ -162,7 +154,6 @@ Base templates in `agent_definitions/templates_agent/`:
 **Template Selection**: See `agent_creation_instructions.md` for decision tree.
 
 ## Model Selection Strategy
-
 The orchestrator scores models based on:
 - **Task Affinity** (40%): Suitability for task type
 - **Performance** (30%): Speed vs reasoning depth
@@ -184,14 +175,6 @@ The orchestrator scores models based on:
 
 ## Development Workflow
 
-### Creating New Agents
-
-1. Select appropriate template from `agent_definitions/templates_agent/`
-2. Customize all sections (scope, models, workflows, metrics)
-3. Define clear scope boundaries (permitted directories, file types, operations)
-4. Specify handoff requirements to other agents
-5. Create memory file following Universal Memory Directive
-6. Validate with `python3 scripts/validate_agents.py`
 
 ### Working with Lattice Schemas
 
